@@ -3,8 +3,8 @@ package com.example.rxjava
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.rxjava.databinding.ActivityMainBinding
-import io.reactivex.rxjava3.core.Observer
-import io.reactivex.rxjava3.disposables.Disposable
+import io.reactivex.Observer
+import io.reactivex.disposables.Disposable
 import kotlin.random.Random
 
 class MainActivity : AppCompatActivity() {
@@ -17,7 +17,7 @@ class MainActivity : AppCompatActivity() {
             RxHelper.text = Random.nextInt().toString()
         }
 
-        RxHelper.getObservable().subscribe(object : Observer<String>{
+        RxHelper.getObservable().subscribe(object : Observer<String> {
             override fun onSubscribe(d: Disposable) {
 
             }
